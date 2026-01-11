@@ -1,0 +1,83 @@
+/* Genel sayfa düzeni */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ac9a84, #3a2008); /* Geçişli arka plan */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Login formu düzeni */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form alanları */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #cb9869;
+}
+
+/* Buton stili */
+.submit-btn {
+    background: linear-gradient(135deg, #ac9a84, #3a2008); 
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background : linear-gradient(135deg, #3a2008, #ac9a84); /* Hover durumunda renk geçişi */
+}
+
+
+/* Link stili */
+p {
+    text-align: center;
+}
+
+a {
+    color: #ac9a84;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

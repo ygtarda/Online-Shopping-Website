@@ -1,0 +1,456 @@
+/* === MEVCUT STİLLERİN - BAŞLANGIÇ (DOKUNULMAYACAK KISIMLAR) === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#ac9a84;
+    /* Sticky Footer için body'ye eklenecekler aşağıda */
+}
+
+header {
+    background-color:#cb9869;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main{ /* Bu main tanımı iki kez var, alttaki daha detaylı olan kalsın */
+    /* text-align: center; // Alttaki main tanımında zaten var */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.no-link-style {
+    text-decoration: none;
+    color: inherit; 
+    cursor: default; 
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Dikey hizalama için eklendi, isteğe bağlı */
+}
+
+header nav ul li {
+    margin-right: 1em;
+}
+
+header nav ul li:last-child { /* Son elemanın sağ margin'ini kaldırabiliriz */
+    margin-right: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header input[type="text"] { /* Arama için #search ID'si eklenmişti, genel input[type="text"] olarak bırakıyorum */
+    padding: 0.5em;
+    border-radius: 4px;
+    border: none;
+}
+
+main {
+    padding: 2em;
+    text-align: center; /* Bu zaten vardı */
+    /* Sticky Footer için main'e eklenecekler aşağıda */
+}
+
+.product-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); Eskisi */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Senin ilk halin */
+    /* gap: 20px; Eskisi */
+    gap: 1em; /* Senin ilk halin */
+}
+
+.sepet-grid{ /* Bu da product-grid gibi grid olmalı */
+    display: grid; /* display: flex; yerine grid yaptım */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    width: 100%; /* İçeriği sarması için */
+}
+
+.product-item2{ /* Bu sınıfı genel .product-item ile birleştirebiliriz veya ayrı kalabilir */
+    border: 1px solid #ddd;
+    padding: 1em;
+    background-color: #f9f9f9;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-item2:hover {
+    transform: translateY(-5px);
+}
+
+.product-item2 h3{
+    float: right; /* Flexbox/Grid kullanmak daha iyi */
+}
+
+.product-item2 img {
+    width: 100%;
+    height: 300px;
+    max-width: 230px;
+    margin-bottom: 1em;
+    object-fit: cover;
+    border-radius: 2%;
+    margin-right: 2em;
+}
+
+.product-info2 h4{
+    margin: 0; /* 20 yerine daha standart bir margin */
+    
+}
+
+.product-info2 p {
+    margin: 1em 0; /* 2em yerine 1em */
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 1em;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; /* box-shadow transition'ı ekledim */
+    /* animation: slideIn 1s ease-out; Bu kalsın, istiyorsan */
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Hover'da gölgeyi artırdım */
+}
+
+.product-item img {
+    width: 100%;
+    height: 350px;
+    max-width: 230px;
+    margin-bottom: 1em;
+    object-fit: cover;
+    border-radius: 2%; /* Orijinal %2 kalabilir veya 4px yapılabilir */
+}
+
+.product-info h4 {
+    margin:0; /* Bu doğru */
+}
+
+.product-info p {
+    margin: 0.5em 0; /* Bu da doğru */
+}
+
+/* ORİJİNAL SEPETE EKLE BUTON STİLLERİ */
+.add-to-cart {
+    background-color: #ac9a84;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Daha önceki önerim buydu, seninkini koruyalım */
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    transition: background-color 0.2s ease;
+    line-height: 1;  
+    text-align: center;
+    align-items: center;   /* Dikeyde ortala */
+    justify-content: center;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.add-to-cart:hover {
+    background-color: #3a2008;
+}
+
+/* .content-wrapper'a şimdilik gerek yok, main'i kullanıyoruz */
+
+footer {
+    background-color: #cb9869;
+    color: white;
+    padding: 20px; /* Sadece 20px (her yönden) veya 20px 0 (sadece üst-alt) */
+    /* padding: 20px 0; /* Senin ilk halindeki gibi sadece üst-alt */
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    /* margin: 10px 0 0; Eskisi */
+    margin-top: 10px; /* Daha net */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* margin yerine gap daha modern */
+}
+
+footer ul li {
+    margin: 0; /* gap kullanıldığı için gereksiz */
+}
+
+footer ul li a {
+    text-decoration: none;
+    /* color: #fff; Eskisi */
+    color: #333; /* Senin ilk halin (Ancak footer arkaplanı beyazken #fff daha iyi olur) */
+                 /* Eğer footer arkaplanı #cb9869 ise color: #fff; daha mantıklı */
+    color: #f0f0f0; /* Hafif açık beyaz yapalım, daha iyi okunur */
+    transition: color 0.2s ease;
+}
+
+footer ul li a:hover {
+    /* color: #ff6347; Eskisi */
+    color: #ffffff; /* Tam beyaz yapalım hover'da */
+    text-decoration: underline; /* Hover'da altını çizelim */
+}
+
+/* .container, button, .value, .quantity-control vb. olduğu gibi kalsın */
+.container {
+    display: flex;
+    margin-left: 600px;
+    margin-top: 100px;
+  }
+  button, .value { /* Bu genel button tanımı diğer butonları etkileyebilir, dikkat! */
+                    /* Daha spesifik yapalım: .quantity-control button */
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+    border: none;
+  }
+  /* Genel button stilini quantity-control içine alalım */
+  .quantity-control button { /* Bu daha iyi */
+    background-color: rgb(47, 47, 249);
+    color: white;
+    width: 30px; /* Önceki .decrease-btn stiliyle birleştirdim */
+    height: 30px;
+    font-size: 20px; /* Önceki .decrease-btn stiliyle birleştirdim */
+    cursor: pointer; /* Ekledim */
+    border: 1px solid #ddd; /* Önceki .decrease-btn stiliyle birleştirdim */
+  }
+  .quantity-control .value {
+    background-color: yellow;
+    color: black;
+    width: 40px; /* Önceki .quantity-input stiliyle birleştirdim */
+    height: 30px; /* Diğer butonlarla aynı yükseklik */
+    line-height: 30px; /* Yüksekliğe göre ayarla */
+    padding: 5px;  /* Önceki .quantity-input stiliyle birleştirdim */
+    border: 1px solid #ddd; /* Önceki .quantity-input stiliyle birleştirdim */
+    font-size: 16px; /* Önceki .quantity-input stiliyle birleştirdim */
+    text-align: center; /* Zaten vardı */
+  }
+  .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+/* .decrease-btn, .increase-btn yukarıda .quantity-control button olarak birleştirildi */
+/* .quantity-input yukarıda .quantity-control .value olarak birleştirildi */
+
+
+/* --- ANASAYFA SLIDER VE CAROUSEL STILLERİ (ORİJİNALİNİ KORUYARAK) --- */
+/* BÜYÜK BANNER SLIDER (#slider) */
+#slider {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.slideshow-container {
+    display: flex;
+    width: 500%; /* 5 slayt varsa ve her biri %100 genişliğindeyse bu doğru */
+    animation: slideShowBanner 25s infinite; /* İsim değiştirildi, süre ayarlanabilir */
+}
+
+.slide { /* .slideshow-container içindeki her bir slayt */
+    min-width: 20%; /* 5 slayt varsa her biri %20 (100/5) */
+    height: auto;
+    /* opacity: 0; transition: opacity 1s ease-in-out; Bunlar JS ile veya keyframe'de yönetilebilir.
+       Mevcut keyframe'iniz sadece transform ile kaydırıyor, opacity değil. */
+}
+
+@keyframes slideShowBanner { /* Eski "@keyframes slide" ama adı değişti, ilk animasyonunuz */
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(-20%); } 
+    40% { transform: translateX(-40%); }
+    60% { transform: translateX(-60%); }
+    80% { transform: translateX(-80%); }
+    100% { transform: translateX(-100%); }
+     99.99% { transform: translateX(-80%); }
+     100% { transform: translateX(-80%); } 
+    100% { transform: translateX(-100%); }
+
+}
+
+
+.product-item { /* Zaten yukarıda tanımlı, bu @keyframes'i oraya ekleyelim */
+    /* animation: slideIn 1s ease-out; Yukarıda product-item tanımına eklenmişti */
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ANASAYFA CAROUSEL (KATEGORİLER ALTINDAKİ 3'LÜ KAYAN RESİMLER) */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    width: 33.3333%; /* Resimlerin genişliğini üçte bir yapıyoruz */
+    flex-shrink: 0; /* Daralmasını engelle */
+    animation: anasayfaKayanResimler 15s infinite linear; /* İsim değiştirildi, senin sürenle */
+    object-fit: cover; /* Resimleri alanı tamamen dolduracak şekilde düzenliyoruz */
+    /* max-height: 250px; İsteğe bağlı yükseklik sınırı */
+}
+
+/* İkinci @keyframes slide tanımının adı değiştirildi */
+@keyframes anasayfaKayanResimler {
+    0% { transform: translateX(0); }
+   
+    100% { transform: translateX(-100%); }
+}
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    header nav ul {
+        /* display: flex; Zaten flex */
+        flex-direction: column;
+        gap: 10px;
+        align-items: center; /* Menü ortalansın */
+    }
+    .carousel img { /* Anasayfa 3'lü carousel mobilde tek görünür */
+        width: 100%;
+        /* animation-duration: 10s; Mobilde daha hızlı olabilir */
+    }
+}
+
+.fav-btn:hover { /* Bu zaten yukarıda .fav-btn içinde tanımlı */
+    /* transform: scale(1.2); */
+    /* transition: 0.2s; */
+}
+
+/* === YENİ EKLENEN STİLLER (STICKY FOOTER İÇİN GEREKLİ OLANLAR VE BİLDİRİMLER) === */
+html { /* Yukarıda zaten var, tekrarına gerek yok, var olanla birleşecek */
+    height: 100%;
+}
+body { /* Yukarıda zaten var, display:flex vs. eklenecek */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main { /* Yukarıda zaten var, flex-grow:1 eklenecek */
+    flex-grow: 1;
+    width: 100%; /* Zaten var */
+    box-sizing: border-box; /* Ekledim, padding'in genişliği etkilememesi için */
+}
+footer { /* Yukarıda zaten var */
+    /* margin-top: auto; // Sticky footer için bu gerekliydi, body flex ise gereksiz */
+}
+
+/* Favori Butonu Stilleri (Mevcut .fav-btn:hover ile birleştirildi) */
+.fav-btn {
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+    vertical-align: middle;
+    color: #ddd;
+    transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+.fav-btn.favorited {
+    color: red !important;
+}
+.fav-btn:hover {
+    transform: scale(1.2); /* Bu zaten vardı */
+    /* transition: 0.2s; Bu zaten vardı */
+    color: #ff7f7f; /* Favori değilken hover rengi (eklendi) */
+}
+.fav-btn.favorited:hover {
+    color: #cc0000; /* Favori iken hover rengi (eklendi) */
+}
+
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.product-actions form {
+    margin: 0;
+}
+
+/* Bildirim Mesaj Stilleri */
+.bildirim-mesaji {
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 600px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+.bildirim-basarili { background-color: #e6fffa; color: #00695c; border-left-color: #00897b; }
+.bildirim-hata { background-color: #ffebee; color: #c62828; border-left-color: #e53935; }
+.bildirim-uyari { background-color: #fff8e1; color: #ffa000; border-left-color: #ffb300; }
+
+/* Boş İçerik Mesajı (Sepet/Favoriler boşken) */
+.icerik-bos-mesaji {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.2em;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.icerik-bos-mesaji p {
+    margin-bottom: 20px;
+}
+.icerik-bos-mesaji .btn-alisverise-basla {
+    padding:12px 25px;
+    background-color:#cb9869;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+.icerik-bos-mesaji .btn-alisverise-basla:hover {
+    background-color: #b08456;
+}
+
+/* Mobil uyumdaki header, nav, ul stilleri zaten vardı */
